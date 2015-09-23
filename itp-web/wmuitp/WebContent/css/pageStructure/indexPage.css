@@ -1,0 +1,21 @@
+.top_username{
+	display: block;
+    height: 21px;
+    position: absolute;
+    left: 220px;
+    top: 8px;
+    z-index: 31;
+    color:#15428B;
+    background:url("/couldContacts/images/ico/user_ico.png") no-repeat left;
+    padding-left:18px;
+    line-height:21px;
+}
+table.tableShowCont tr td{
+	padding:5px 0;
+}
+.positionBox{
+	position:relative;
+}
+.positionBoxAb{
+	position:absolute;
+}

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:p="http://www.springframework.org/schema/p" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd 
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+	<!-- 注解支持 -->
+	<context:annotation-config />
+
+	<!-- 启动组件扫描，排除@Controller组件，该组件由SpringMVC配置文件扫描 -->
+	<context:component-scan base-package="sedion.jeffli.wmuitp">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>
+
+
+	<bean id="dataSource" class="com.jolbox.bonecp.BoneCPDataSource" destroy-method="close">
+		<property name="driverClass">
+			<value>com.mysql.jdbc.Driver</value>
+		</property>
+		<property name="jdbcUrl">
+			<value>jdbc:mysql://localhost:3307/itp</value>
+		</property>
+		<property name="username">
+			<value>root</value>
+		</property>
+		<property name="password">
+			<value>123456</value>
+		</property>
+
+		<!-- Max connection numbers in every partition -->
+		<property name="maxConnectionsPerPartition" value="15" />
+		<!-- Min connection numbers in every partition -->
+		<property name="minConnectionsPerPartition" value="1" />
+		<!-- Partition numbers,default as 2,min as 1,recommend 3-4,depends on -->
+		<property name="partitionCount" value="4" />
+		<!-- Everytime the numbers of connection requirement,default as 2 -->
+		<property name="acquireIncrement" value="2" />
+		<!-- Value of the cache prepared statements,default as 0 -->
+		<property name="statementsCacheSize" value="0" />
+		<!-- The number of release connection assistant process by every partition -->
+		<!-- Default as 3.Your performance will be affected by excessive assistant process unless you need to do a lot work in one connection -->
+		<property name="releaseHelperThreads" value="3" />
+	</bean>
+
+	<!--Define the sessionFactory of hibernate4 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+			</props>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath:/sedion/jeffli/wmuitp/entity/*.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- deploy the spring bean util 
+	<bean id="springContextUtil" class="xidian.hy.o2o.util.SpringContextUtil"></bean>
+	-->
+	
+	<!-- 配置jdbc事务 -->
+	<bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!--配置启用事务的动态代理 --> 
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<!-- the transactional semantics... -->
+		<tx:attributes>
+			<!-- all methods starting with '*' are read-only -->
+			<tx:method name="get*" read-only="true" />
+			<!-- other methods use the default transaction settings (see below) -->
+			<tx:method name="add*" propagation="REQUIRED" />
+			<tx:method name="save*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="create*" propagation="REQUIRED" />
+			<tx:method name="init*" propagation="REQUIRED" />
+			<tx:method name="change*" propagation="REQUIRED" />
+			<!-- message -->
+			<tx:method name="read*"   propagation="REQUIRED"/>
+			<!-- course student relation -->
+			<tx:method name="turn*" propagation="REQUIRED" />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+	
+	<!-- advice-ref="txAdvice" 指定事务通知 -->
+	<aop:config proxy-target-class="true">
+		<aop:advisor advice-ref="txAdvice" pointcut="execution(* sedion.jeffli.wmuitp..*.*(..))" />
+	</aop:config>
+	
+	
+	
+	<!-- quartz配置  动态配置所以我们将 Factory 作为一个service一样的接口 QuartzJobFactory.java-->
+    <!-- 调度工厂
+    <bean id="schedulerFactoryBean" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    </bean>
+     -->
+</beans>

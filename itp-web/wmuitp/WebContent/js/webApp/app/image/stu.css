@@ -1,0 +1,481 @@
+header{
+	background: #5BCCB5;
+}
+.headBack{
+	position: absolute;
+	left: 2%;
+	width: 70px;
+	height: 100%;
+	padding-bottom: 10px;
+	color: #FFFFFF;
+}
+.stuHeadBack{
+	background: url(../image/greenBack.png) left 4px no-repeat;
+}
+.headMore{
+	position: absolute;
+	right: 2%;
+	top: 8px;
+	background: url(../image/icon2.png) 0 -35px no-repeat;
+	width: 30px;
+	height: 20px;
+}
+.xmyContent {
+	text-align: center;
+	padding-top: 44px;
+}
+/*********固定tab*****/
+.xmyTab{
+	position: fixed;
+	width: 100%;
+	font-size: 14px;
+	top: 44px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #F6F6F6;
+	z-index: 900;
+}
+.xmyTab ul li{
+	width: 32%;
+	background-color: #84B1FA;
+	margin: 5px 0 5px  1%;
+	border-radius: 3px;
+	float: left;
+	cursor: pointer;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+.xmyTab ul li.xtabChooes{
+	background-color: #F6F6F6;
+	margin-bottom: 0;
+	padding-bottom: 5px;
+}
+.xmyTab ul li.xtabChooes a{
+	color:#4C4C4C;
+}
+.xmyTab ul li:first-child{
+	margin-left: 0;
+	width: 34%;
+}
+.xmyTab ul li a{
+	color: #FFFFFF;
+}
+/*首页选择日期*/
+.xdate{
+	height: 145px;
+	border-bottom: 2px solid #5BCCB5;
+	color: #BCBCBC;
+	background-color: #FFFFFF;
+	position: fixed;
+	width: 100%;
+	z-index: 900;
+	top: 44px;
+	text-align: center;
+}
+.xdate h2{
+	height: 40px;
+	line-height: 40px;
+}
+.xdate ul li{
+	height: 90px;
+	width: 33%;
+	float: left;
+}
+.xdate ul li span{
+	display: block;
+	font-size: 60px;
+}
+.xdate ul li.xdateChooes{
+	color: #32BFA3;
+	background: url(../image/arrow.png) no-repeat center bottom;
+}
+/*首页课程表*/
+.xmyindex{
+	padding-top: 191px;
+}
+.xclassList{
+	width: 90%;
+	margin: 0 auto;
+	text-align: left;
+	margin-bottom: 15px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 1px 6px #CCC;;
+	overflow: hidden;
+	border-radius: 5px;
+	border-bottom: 2px solid #fcfcfc;
+}
+.xclassList_imgBox{
+	height: 150px;
+	border-bottom: 2px solid #EE5465;
+	overflow: hidden;
+	position: relative;
+}
+.xclassList_imgBox img{
+	width: 100%;
+}
+.xclassList_imgBox>p{
+	position: absolute;
+	height: 35px;
+	line-height: 35px;
+	background-color: rgba(0,0,0,.4);
+	color: #FFFFFF;
+	bottom: 0;
+	padding-left: 3%;
+	width: 97%;
+}
+.xclassList_detail ul li{
+	float: left;
+	width: 23%;
+	height: 24px;
+	padding: 10px 5%;
+	font-size: 14px;
+	line-height: 24px;
+}
+.xclassList_detail{
+	overflow: hidden;
+}
+.xclassList_detail ul li em{
+	height: 24px;
+	width: 20px;
+	vertical-align: middle;
+	background-image: url(../image/iconList.png);
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	display: inline-block;
+}
+/***********小图标的位置****************/
+.index_person{
+	background-position: 0 4px;
+}
+.index_time{
+	background-position: 0 -22px;
+}
+/*已签到*/
+.index_flag1{
+	background-position: 0 -80px;
+}
+/*未签到*/
+.index_flag2{
+	background-position: 0 -103px;
+}
+.xclassList_detail ul li:last-child{
+	width: 24%;
+}
+/******************************课程详细信息****************************/
+.xclassListDetailMsg{
+	position: relative;
+	border-top: 2px solid #32BFA3;
+	font-size: 14px;
+}
+.xclassListDetailMsg hr{
+	border: 1px dashed #CCCCCC;
+	width: 90%;
+	margin: 17px auto;
+}
+.xclassListDetailMsg h3{
+	position: absolute;
+	background-color: #FFFFFF;
+	top: 10px;
+	left: 30%;
+	padding: 0 10px;
+	height: 18px;
+	line-height: 18px;
+	overflow: hidden;
+}
+.xclassListDetailMsg ul{
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.xclassListDetailMsg ul li{
+	height: 35px;
+	line-height: 35px;
+	overflow: hidden;
+	float: left;
+	width: 50%;
+}
+.xclassListDetailMsg ul li:nth-child(5){
+	width: 100%;
+	overflow: auto;
+}
+.xclassListDetailMsg ul li:nth-child(6){
+	width: 100%;
+	overflow: auto;
+}
+.xclassListDetailMsg p{
+	padding: 0 5% 5px;
+	line-height: 1.5em;
+}
+.iconListImg{
+	background-image: url(../image/iconList.png);
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+}
+/****图标定位*****/
+.detail_title{
+	background-position: 0 -128px;
+}
+.detail_intro{
+	background-position: 0 -148px;
+}
+.detail_teacher{
+	background-position: -24px -148px;
+}
+.detail_position{
+	background-position: -25px -54px;
+}
+.detail_keshu{
+	background-position: -25px -113px;
+}
+.detail_clock{
+	background-position: -25px -28px;
+}
+.detail_flag{
+	background-position: -25px -85px;
+}
+.detail_person{
+	background-position: -25px 0;
+}
+/****随堂测试列表头部信息******/
+.xclassTest{
+	border-bottom: 1px dashed #A69C9C;
+	height: 50px;
+	padding: 20px 0;
+}
+.xclassTest>p{
+	background: url(../image/img2.png) no-repeat;
+	padding-left:60px ;
+	text-align: left;
+	height: 100%;
+	width: 170px;
+	margin: 0 auto;
+}
+.xclassTest p>span{
+	display: block;
+	line-height: 25px;
+}
+.xclassTest p span em{
+	color: #EB9661;
+}
+/*************************随堂测试1*****************/
+ul.xclassTestList li{
+	height: 100px;
+	margin-top: 20px;
+	background-color: #FFFFFF;
+	background: url(../image/line.png) repeat-x center bottom,url(../image/img1.png) no-repeat 30% bottom;
+}
+ul.xclassTestList li::after{
+	content:"."; 
+	display:block; 
+	height:0; 
+	clear:both; 
+	visibility:hidden; 
+
+}
+.xclassTestList_date{
+	background: url(../image/icon1.png) no-repeat;
+	height: 78px;
+	width: 80px;
+	color: #FFFFFF;
+	margin-left: 5%;
+}
+.xclassTestList_date>span{
+	padding-top: 25px;
+	display: block;
+}
+/**随堂测试1____详细xinxi**/
+.classTestList_msg{
+	border: 1px solid #DEE1E1;
+	border-left: 2px solid #5BCCB5;
+	border-top-left-radius: 45px;
+	border-bottom-left-radius: 45px;
+	height: 40px;
+	padding: 15px 0;
+	width: 60%;
+	position: relative;
+	line-height: 20px;
+	background-color: #FFFFFF;
+}
+.classTestList_msg span{
+	display: block;
+	padding-right: 40px;
+	padding-left: 20px;
+	overflow: hidden;
+	height: 20px;
+}
+.classTestList_msg>em{
+	display: block;
+	background-image: url(../image/icon2.png);
+	background-attachment: scroll;
+	background-repeat: no-repeat;
+	width: 36px;
+	height: 31px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+.noSubmit{
+	background-position:0 -90px ;
+}
+.haveSubmit{
+	background-position: 0 -143px;
+}
+/***温馨提示*****/
+.xclassTestPoint{
+	width: 60%;
+	margin: 30px auto;
+	line-height: 1.5em;
+}
+.xclassTestPoint h2{
+	line-height: 35px;
+	height: 35px;
+}
+.xclassTestPoint em{
+	background: url(../image/sorry.png) no-repeat scroll;
+	display: inline-block;
+	height: 110px;
+	width: 110px;
+}
+/****学生测试试题****/
+.stuExam{
+	background: url(../image/img3.png) no-repeat 10px bottom;
+	height:60px;
+	padding-left: 55px;
+}
+.stuExam h2{
+	border-bottom: 2px solid #5BCCB5;
+	height: 100%;
+	line-height: 60px;
+	overflow: hidden;
+}
+.stuExamDetail{
+	margin: 20px auto;
+	line-height: 2em;
+	padding: 5px 2%;
+}
+.stuExamDetail>p{
+	padding: 5px 0;
+}
+ul.testQuestionBig li{
+	width: 100%;
+	border-bottom: 1px dashed #ced0d0;
+}
+ul.testQuestionBig li:last-child{
+	border-bottom: none;
+}
+.textSubmit{
+	font-size: 20px;
+	background-color: #5BCCB5;
+	border-radius: 5px;
+	text-align: center;
+	height: 40px;
+	color: #FFFFFF;
+	-webkit-appearance:none;
+}
+/****************论坛*********************/
+.editor{	
+	height:45px;
+}
+.editor a em{
+	background: url(../image/editor.png) no-repeat;
+	height: 41px;
+	width: 41px;
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 10px;
+}
+.chatBox{
+	background-color: #FFFFFF;
+	line-height: 1.5em;
+	text-align: left;
+	padding: 10px 3%;
+	color: #000;
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 20px;
+}
+.chatBox p{
+	font-size: 14px;
+	color: #666;
+	margin: 10px 0;
+}
+.chatMsg{
+	font-size: 12px;
+	color: #777;
+}
+.chatMsg span em{
+	color: #999;
+	margin-left: 3%;
+}
+.chatDiscuss a,.teaChatList{
+	background: #F6F6F6;
+	margin: 0 -3% -10px;
+	font-size: 12px;
+	padding: 5px 3%;
+	line-height: 27px;
+	text-align: center;
+	clear: both;
+}
+.chatDiscuss a em,.teachatIcon{
+	background-image: url(../image/chat.png);
+}
+.chatDiscuss a em,.teachatIcon,.dingIcon,.noDingIcon{
+	 background-repeat:no-repeat;
+	 background-attachment: scroll;
+	 padding-right: 25px;
+}
+/**********************帖子详情页**********/
+/***发送消息******/
+.reply{
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+	background: #F3F3F3;
+	border-top: 1px solid #CED0D0;
+}
+input.reply_text{
+	width: 76%;
+	height: 30px;
+	margin: 10px 1%;
+	font-size: 14px;
+	float: left;
+	border:1px solid #ccc;
+	padding:0 2%;
+	border-radius:3px;
+}
+input.reply_send{
+	width: 17%;
+	height: 33px;
+	margin-top: 10px;
+	background: #5BCCB5;
+	color: #FFFFFF;
+	float: right;
+	border-radius:3px;
+}
+/***回复区******/
+.replyBox{
+	margin-top: -20px;
+	background: #F6F6F6;
+	border-bottom: 1px dashed #DDDDDF;
+}
+.replyBox p{
+	color: #000000;
+	margin: 0;
+}
+.replyResult{
+	padding-bottom: 50px;
+}
+/*老师icon*/
+.teaPerson{
+	background-position: -52px 0;
+}
+/*******置顶icon*************/
+.zhiding{
+	background-position: -76px -28px;
+}

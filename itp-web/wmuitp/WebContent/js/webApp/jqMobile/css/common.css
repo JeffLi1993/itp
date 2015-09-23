@@ -1,0 +1,9 @@
+.ui-icon-custom-sams{
+	background-image: url("images/ajax-loader.gif");
+}
+@media only screen and (-webkit-min-devoce-pixel-ratio:2){
+	.ui-icon-custom-sams{
+		background-image: url("images/ajax-loader.gif");
+		background-size: 18px 18px;
+	}
+}

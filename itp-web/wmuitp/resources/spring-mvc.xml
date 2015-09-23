@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:mvc="http://www.springframework.org/schema/mvc" 
+		xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr" 
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+        http://www.directwebremoting.org/schema/spring-dwr   
+    	http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd
+        ">
+        
+	<!-- 自动扫描的包名 ：Springmvc将在该路径下寻找Controller(有Controller注释的类)  -->  
+	<context:component-scan base-package="sedion.jeffli.wmuitp.web" />
+
+	<!--开启注解 --> 
+	<mvc:annotation-driven>
+		<!-- 这里有用 自定义注解绑定  模仿支持struts2的提交方式
+		<mvc:argument-resolvers>
+			<bean class="sedion.jeffli.wmuitp.util.FormModelMethodArgumentResolver" />
+		</mvc:argument-resolvers>
+		-->
+		<!--responseBody中文乱码解决 -->
+		<mvc:message-converters register-defaults="true">
+			<bean class="sedion.jeffli.wmuitp.util.UTF8StringHttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<!-- 对静态资源文件的访问   --> 
+	<mvc:default-servlet-handler />
+
+	<!-- 它从位于项目class路径根目录下的“spring-views.properties”中加载视图bean。 -->
+	<bean class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="basename" value="views"></property>
+	<!--<property name="order" value="0"></property> -->
+	</bean>
+
+	<!-- spring 整合freemarker -->
+	<bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="suffix" value=".ftl" />
+		<property name="prefix" value="/" />
+		<property name="contentType" value="text/html; charset=UTF-8" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<!-- 在ftl页面中获取request -->
+		<property name="requestContextAttribute" value="request" />
+		<property name="order" value="0"></property>
+	</bean>
+
+	<bean id="fmXmlEscape" class="freemarker.template.utility.XmlEscape" />
+
+	<!-- 设置freeMarker的配置文件路径 -->
+	<bean id="freemarkerConfiguration" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+		<property name="location" value="classpath:freemarker.properties" />
+	</bean>
+	
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<!-- 指定FreeMarker模板文件目录 -->
+		<property name="templateLoaderPath" value="/WEB-INF/views" />
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="xml_escape" value-ref="fmXmlEscape" />
+			</map>
+		</property>
+		<property name="freemarkerSettings" ref="freemarkerConfiguration">
+		</property>
+	</bean>
+
+	<!-- 视图解释类： 定义JSP -->
+	<bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/" />
+		<property name="suffix" value=".jsp" />
+		<property name="order" value="1"></property>
+	</bean>
+	
+	<!-- 支持Shiro对Controller的方法级AOP安全控制 begin
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
+        <property name="proxyTargetClass" value="true" />
+    </bean>
+    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.apache.shiro.authz.UnauthorizedException">error/403</prop>
+            </props>
+        </property>
+    </bean>-->
+    <!-- Shiro end -->
+    
+	<!-- 支持上传文件 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+
+	<!-- SpringMVC在超出上传文件限制时，会抛出org.springframework.web.multipart.MaxUploadSizeExceededException -->
+	<!-- 该异常是SpringMVC在检查上传的文件信息时抛出来的，而且此时还没有进入到Controller方法中 -->
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<!-- 遇到MaxUploadSizeExceededException异常时，自动跳转到/WEB-INF/error_fileupload.jsp页面 -->
+				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">WEB-INF/error/error_fileupload</prop>
+				<prop key="java.lang.Throwable">error/500</prop>
+			</props>
+		</property>
+	</bean>
+</beans>

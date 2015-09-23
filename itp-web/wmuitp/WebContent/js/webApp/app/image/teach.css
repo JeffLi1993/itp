@@ -1,0 +1,223 @@
+header{
+	background-color: #84B1FA;
+}
+/*******首页定位日期***********/
+.xteachDate{
+	border-bottom: 2px solid #84B1FA;
+}
+.xteachDate ul li.xteachDateChooes{
+	color: #7298D6;
+	background: url(../image/arrow.png) no-repeat center bottom;
+}
+/******教师TOP返回按钮********/
+.teachHeadBack{
+	position: absolute;
+	left: 2%;
+	background: url(../image/blueBack.png) left 4px no-repeat;
+	width: 70px;
+	height: 100%;
+	padding-bottom: 10px;
+}
+/***教师Tab标签颜色更改*************/
+.xmyTeachTab ul li{
+	background-color: #5BCCB5;
+	width:24%;
+}
+.xmyTeachTab ul li:first-child{
+	width: 25%;
+}
+/****************************课程详细信息*********************/
+.teachListDetailMsg{
+	border-top: 2px solid #84B1FA;
+}
+/**********替换的小图标位置*********/
+/*详情课程信息icon*/
+.teaTitle{
+	background-position: -51px -149px;
+}
+/*详情上课地点icon*/
+.teaPosition{
+	background-position: -52px -54px;
+}
+/*详情课时icon*/
+.teaKeshu{
+	background-position: -52px -113px;
+}
+/*详情上课下课时间icon*/
+.teaClock{
+	background-position: -52px -28px;
+}
+/*详情开启状态icon*/
+.teaFlag{
+	background-position: -52px -85px;
+}
+/*************************随堂测试*****************************/
+/*随堂测试icon*/
+.teaNoSubmit{
+	background-position:-48px -90px ;
+}
+.xteaTestList{
+	border-left: 2px solid #84B1FA;
+}
+/******开启试卷******/
+.teaExam h2{
+	border-bottom: 2px solid #84B1FA;
+}
+.TeachTest{
+	height:40px;
+	width: 90%;
+	border-bottom: 1px solid #009AD6;
+	margin: 20px auto;
+}
+.stuExamDetail>h4{
+	color: #978E98;
+	line-height: 1.5em;
+}
+.stuExamDetail h4 span:first-child{
+	color: #E07020;
+}
+/**************测试结果统计*********************************/
+.xmyClassA{
+	margin: 10px 0;
+	text-align: left;
+}
+.xmyClassA>h3{
+	background:url(../image/kaoqin.png) scroll no-repeat;
+	padding-left: 60px;
+	line-height: 48px;
+	height: 48px;
+	overflow: hidden;
+	color: #5F81B8;
+}
+.xmyClassAName{
+	border-left: 3px solid #FFA133;
+	margin-left: 24px;
+	margin-top: -2px;;
+}
+.testResult{
+	background: url(../image/quan.png) 0 30px scroll no-repeat;
+	padding-left: 10px;
+	padding-top: 20px;
+	margin-left: -10px;
+}
+.testOneQuestion{
+	background-color: #FFFFFF;
+	margin-left:20px;
+	border: 1px solid #dddddf;
+	padding: 10px;
+	min-height: 100px;
+	line-height: 1.5em;
+	border-radius: 5px;
+}
+.testOneQuestion_title{
+	background:url(../image/whiteArrow.png) no-repeat 1px 0;
+	margin-left: -20px;
+	padding-left: 30px;
+}
+.testOneQuestion_title p{
+	padding: 5px 0;
+	border-bottom: 1px dashed #dddddf;
+	word-break: break-all;
+}
+.testAnswer{
+	padding-left: 10px;
+	font-size: 14px;
+	margin: 10px 0;
+}
+.testAnswerBox{
+	border-radius: 20px;
+	background-color: #F3f3f3;
+	height: 15px;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.testAnswerShow{
+	background-color: #c7dafa;
+	height: 100%;
+	z-index: 2;
+}
+.testAnswerExp{
+	z-index: 3;
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 10px;
+	color: #F36D2D;
+}
+/******************考勤结果分析********************************/
+.kaoQinBox>h3{
+	background: url(../image/Comment_icon.png) no-repeat;
+}
+.kaoQinBox .xmyClassAName{
+	border-left: 3px solid #DEE1E1;
+}
+.teaPersonGrey{
+	background-position: -77px 0;
+}
+input.reply_sendChange{
+	background: #84B1FA;
+}
+.lookForDetail a{
+	font-size: 14px;
+	background: #FFA133;
+	color: #FFFFFF;
+	text-align: center;
+	margin-left: 10px;
+	line-height: 30px;
+	border-radius: 5px;
+}
+.allArrive a{
+	background: #DEE1E1;
+}
+/**考勤缺勤学生汇总***/
+.noLogin{
+	background: #FFFFFF;
+	margin-top: 10px;
+	font-size: 14px;
+}
+.f16{
+	font-size: 16px;
+}
+.noLogin ul li{
+	border-bottom: 1px solid #DEE1E1;
+	overflow: hidden;
+}
+.noLogin ul li span{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	padding:0 1%;
+}
+.noLogin ul li span:nth-child(1){
+	width: 20%;
+	text-align: left;
+}
+.noLogin ul li span:nth-child(2){
+	width: 44%;
+	text-align: center;
+}
+.noLogin ul li span:nth-child(3){
+	width: 30%;
+	text-align: center;
+}
+/*********教师帖子列表***********/
+.teaEditor a em{
+	background: url(../image/editorTeach.png) no-repeat;
+}
+.teaChatList{
+	height: 27px;
+}
+.teaChatList ul li{
+	float: left;
+	width: 50%;
+}
+.teaChatList ul li:first-child{
+	border-right: 1px dashed #ccc;
+}
+.dingIcon{
+	background-image: url(../image/ding.png);
+}
+.noDingIcon{
+	background-image: url(../image/noding.png);
+}

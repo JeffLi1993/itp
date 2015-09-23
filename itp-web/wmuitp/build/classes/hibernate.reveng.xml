@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="itp" match-name="class_info"/>
+  <table-filter match-catalog="itp" match-name="course"/>
+  <table-filter match-catalog="itp" match-name="course_info"/>
+  <table-filter match-catalog="itp" match-name="course_teacher_relation"/>
+  <table-filter match-catalog="itp" match-name="discussion_student_reply"/>
+  <table-filter match-catalog="itp" match-name="discussion_teacher_reply"/>
+  <table-filter match-catalog="itp" match-name="discussion_topic"/>
+  <table-filter match-catalog="itp" match-name="exam_student"/>
+  <table-filter match-catalog="itp" match-name="exam_student_result"/>
+  <table-filter match-catalog="itp" match-name="message_receive"/>
+  <table-filter match-catalog="itp" match-name="message_sender"/>
+  <table-filter match-catalog="itp" match-name="paper_info"/>
+  <table-filter match-catalog="itp" match-name="paper_subject_relation"/>
+  <table-filter match-catalog="itp" match-name="student_course_relation"/>
+  <table-filter match-catalog="itp" match-name="student_info"/>
+  <table-filter match-catalog="itp" match-name="subject_infor"/>
+  <table-filter match-catalog="itp" match-name="teacher_info"/>
+  <table-filter match-catalog="itp" match-name="user_login"/>
+</hibernate-reverse-engineering>
