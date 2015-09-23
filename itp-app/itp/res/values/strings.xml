@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">			itp											</string>
+    <string name="action_settings">		Settings									</string>
+    <string name="hello_world">			Hello world!								</string>
+	<!-- public -->
+	<string name="main_page">			主页											</string>
+	<string name="cancel">				取消											</string>
+	<string name="warn_wether_to_exit">	再按一次后退键退出应用程序!					</string>
+	
+    <!-- main - login -->
+    <string name="login_activity_name"> 登录WMU智慧教学平台 							</string>
+    <string name="login_account_text">	帐号：										</string>
+    <string name="login_account_hint">	请输入账户									</string>
+    <string name="login_password_text">	密码：										</string>
+    <string name="login_password_hint">	请输入密码									</string>
+    <string name="login_button_text">	登   录										</string>
+    
+    <!-- 首页 -->
+    <string name="hello">				Hello World, BarCodeTestActivity			</string>
+    
+    <!-- 左滑动菜单 -->
+    <string name="main_left_name">      菜               单									</string>
+    
+    <!-- 二维码 -->
+    <string name="bar_code_name">		二维码										</string>
+    <string name="bar_code_btn">		二维码/签到									</string>
+    <string name="bar_code_desc">		将二维码放入框内,自动扫描后即可签到成功。 	   	</string>
+    
+</resources>

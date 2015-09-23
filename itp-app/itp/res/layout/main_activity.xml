@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bottom_lxq"
+    android:orientation="vertical"
+   	android:id="@+id/main_frag"
+     >
+    
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+	    android:gravity="center">
+	    <sedion.jeffli.pullreash.ui.PullToRefreshWebView
+		       android:id="@+id/pull_webview"
+		       android:layout_width="match_parent"
+		       android:layout_height="match_parent"/>
+	    <!--  <WebView
+	        android:id="@+id/wv_main"
+	        android:layout_width="fill_parent"
+	        android:layout_height="fill_parent" />-->
+	</LinearLayout>
+	<!-- 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+        <ImageView
+            android:id="@+id/btn_more"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7dp"
+            android:background="@drawable/main_bg_for_imgbtn"
+            android:clickable="true"
+            android:focusable="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_btn_more" />
+
+    </RelativeLayout>
+     -->
+</LinearLayout>

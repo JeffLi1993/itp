@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="sedion.jeffli.itp"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="14" />
+    <!-- 权限管理 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 二维码扫描 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 其他权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+	
+    <application
+        android:name="sedion.jeffli.util.GlobalParameterApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.Main" >
+        <activity
+            android:name="sedion.jeffli.activity.ImageToLoginActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- login主界面 -->
+        <activity 
+          android:name="sedion.jeffli.activity.LoginActivity"
+          android:label="登录"
+          android:screenOrientation="portrait">
+        </activity>
+        <!-- 操作主界面 -->
+        <activity 
+          android:name="sedion.jeffli.activity.MainActivity"
+          android:label="主界面"
+          android:screenOrientation="portrait">
+        </activity>
+        <!-- 操作界面 包括主 滑动菜单-->
+           <activity 
+             android:name="sedion.jeffli.activity.MainAct"
+             android:label="主界面"
+             android:screenOrientation="portrait">
+           </activity>
+        <!-- 二维码 -->
+         <activity
+            android:configChanges="orientation|keyboardHidden"
+            android:name="com.zxing.activity.CaptureActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:windowSoftInputMode="stateAlwaysHidden" 
+            >
+        </activity>
+        
+    </application>
+	
+</manifest>
